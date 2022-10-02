@@ -98,18 +98,18 @@ int main() {
 
     srand (time(NULL));
 
-    char battlefield[10][10];
-    char hiddenfield[10][10];
+    char enemyfield[10][10];
+    char playerfield[10][10];
     int x, y;
     char keepPlaying;
 
-    resetField(battlefield);
-    resetField(hiddenfield);
+    resetField(enemyfield);
+    resetField(playerfield);
 
-    placeShips(battlefield);
-    printField(hiddenfield);
+    placeShips(enemyfield);
+    printField(playerfield);
 
-    while (checkForShips(battlefield)) {
+    while (checkForShips(enemyfield)) {
 
         // Ask the player if they want to keep going
         cout << "Fire again? (y/n): \n";
@@ -128,27 +128,27 @@ int main() {
 
 
         // check if player hit
-        if (battlefield[x][y] == 'A' || battlefield[x][y] == '>'){
+        if (enemyfield[x][y] == 'A' || enemyfield[x][y] == '>'){
             // Hit
-            battlefield[x][y] = 'X';
-            hiddenfield[x][y] = 'X';
-            printField(hiddenfield);
-            // printField(battlefield); // uncomment this to show the board answers
+            enemyfield[x][y] = 'X';
+            playerfield[x][y] = 'X';
+            printField(playerfield);
+            // printField(enemyfield); // uncomment this to show the enemy's board
             cout << "Hit!\n";
             
         }
         else {
             // Miss
-            hiddenfield[x][y] = 'O';
-            battlefield[x][y] = 'O';
-            printField(hiddenfield);
-            // printField(battlefield); // uncomment this to show the board answers
+            playerfield[x][y] = 'O';
+            enemyfield[x][y] = 'O';
+            printField(playerfield);
+            // printField(enemyfield); // uncomment this to show the enemy's board
             cout << "Miss!\n";
         }
 
     }
 
-    printField(hiddenfield);
+    printField(playerfield);
 
     // Victory/Loss message
     if (!(keepPlaying == 'n' || keepPlaying == 'N')) {
