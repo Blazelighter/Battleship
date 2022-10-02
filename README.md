@@ -7,7 +7,7 @@ to keep track of where the player has fired already. Ships are placed randomly o
 
 I developed this software to challenge myself to utilize what I've learned in C++ so far.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/LoMtLgOOJL4)
 
 # Development Environment
 
